@@ -1,0 +1,84 @@
+#include<stdio.h>
+#include<math.h>
+float fac(int n)
+{
+int i;
+float fac1=1;
+for(i=n;i>0;i--)
+{
+fac1*=i;
+}
+return fac1;
+}
+int main()
+{
+char c1;
+int n1,n2,c2,Pow;
+do
+{
+printf("\n1.Add\n2.Subtract\n3.Multiply\n4.Divide\n5.Greater than(>)\n6.Lesserthan(<)\n7.Not Equal(!=)\n8.Equal(==)\n9.Factorial\n10.Power(n1^n2)\n\n");
+scanf("%d",&c2);
+switch(c2)
+{
+case 1: printf("Enter the 2 numbers\n");
+scanf("%d%d",&n1,&n2);
+printf("Result is: %d",n1+n2);
+break;
+case 2: printf("Enter the 2 numbers\n");
+scanf("%d%d",&n1,&n2);
+printf("Result is: %d",n1-n2);
+break;
+case 3: printf("Enter the 2 numbers\n");
+scanf("%d%d",&n1,&n2);
+printf("Result is: %d",n1*n2);
+break;
+case 4: printf("Enter the 2 numbers\n");
+scanf("%d%d",&n1,&n2);
+printf("Result is: %f",(n1/(float)n2));
+break;
+case 5: printf("Enter the 2 numbers\n");
+scanf("%d%d",&n1,&n2);
+if(n1>n2)
+printf("%d greater than %d",n1,n2);
+else
+printf("%d not greater than %d",n1,n2);
+break;
+case 6: printf("Enter the 2 numbers\n");
+scanf("%d%d",&n1,&n2);
+if(n1<n2)
+printf("%d lesser than %d",n1,n2);
+else
+printf("%d not lesser than %d",n1,n2);
+break;
+case 7: printf("Enter the 2 numbers\n");
+scanf("%d%d",&n1,&n2);
+if(n1!=n2)
+printf("%d not equal %d",n1,n2);
+else
+printf("%d equal to %d",n1,n2);
+break;
+case 8: printf("Enter the 2 numbers\n");
+scanf("%d%d",&n1,&n2);
+if(n1==n2)
+printf("%d equal to %d",n1,n2);
+else
+printf("%d not equal to %d",n1,n2);
+break;
+case 9: printf("Enter the number\n");
+scanf("%d",&n1);
+printf("Factorial is: %f",fac(n1));
+break;
+case 10:printf("Enter the number and the power to be raised\n");
+scanf("%d%d",&n1,&n2);
+Pow=pow(n1,n2);
+printf("Result is: %d",Pow);
+break;
+default: printf("Invalid Choice\n");
+}
+printf("\nDo you want to continue?(y-yes else any character)\n");fflush(stdin);
+scanf("%c",&c1);
+}while(c1=='y'||c1=='Y');
+return 0;
+}
+  
+
