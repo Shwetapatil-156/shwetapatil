@@ -1,0 +1,74 @@
+abstract class shape
+{
+   double dim1;
+   double dim2;
+   shape(double a,double b)
+   {
+     dim1=a;
+     dim2=b;
+
+   }
+   abstract double area();
+}
+class rectangle extends shape
+{
+    rectangle(double a,double b)
+    {
+    super(a,b);
+    }
+double area()
+{
+    System.out.println("inside area of rectangle");
+    return dim1*dim2;
+}
+}
+class triangle extends shape
+{
+    triangle(double a,double b)
+    {
+        super(a,b);
+    }
+    double area()
+    {
+        System.out.println("inside area of triangle");
+        return  (dim1*dim2)/(2);
+    }
+}    
+
+class circle extends shape
+{
+    circle(double a,double b)
+    {
+        super(a,b);
+    }
+    double area()
+    {
+        System.out.println("inside area of circle");
+        return 3.14*dim1*dim2;
+    }
+}
+ public class abstractareas
+{
+    public static void main(String args[])
+    {
+        rectangle r=new rectangle(9,5);
+        triangle t=new triangle(10,6);
+        circle c=new circle(4,4);
+        shape sharef;
+        sharef=r;
+        System.out.println("area of rectangle" +sharef.area());
+        sharef=t;
+        System.out.println("area of triangle"+sharef.area());
+        sharef=c;
+        System.out.println("area of circle"+sharef.area());
+    }
+}
+OUTPUT:
+$javac abstractareas.java
+$java -Xmx128M -Xms16M abstractareas
+inside area of rectangle
+area of rectangle45.0
+inside area of triangle
+area of triangle30.0
+inside area of circle
+area of circle50.24
